@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ManagedExtension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="FeaturedPostsRotator">
+  <AdminPage>~/Custom/Controls/FeaturedPostsRotator/Admin.aspx</AdminPage>
+  <Author>&lt;a href="http://www.informarea.it"&gt;Inform@rea&lt;/a&gt;</Author>
+  <Description>Add Featured Posts images in your slideshow</Description>
+  <Enabled>true</Enabled>
+  <Priority>0</Priority>
+  <SubBlogEnabled>true</SubBlogEnabled>
+  <Settings>
+    <Delimiter>44</Delimiter>
+    <Help />
+    <Hidden>false</Hidden>
+    <Index>0</Index>
+    <IsScalar>true</IsScalar>
+    <Name>FeaturedPostsRotator</Name>
+    <Parameters>
+      <KeyField>false</KeyField>
+      <Label>Use Extension JQuery file</Label>
+      <MaxLength>1</MaxLength>
+      <Name>UseExtensionJQuery</Name>
+      <ParamType>Boolean</ParamType>
+      <Required>true</Required>
+      <SelectedValue />
+      <Values>True</Values>
+    </Parameters>
+    <ShowAdd>true</ShowAdd>
+    <ShowDelete>true</ShowDelete>
+    <ShowEdit>true</ShowEdit>
+    <BlogId>96d5b379-7e1d-4dac-a6ba-1e50db561b04</BlogId>
+  </Settings>
+  <Settings>
+    <Delimiter>44</Delimiter>
+    <Help />
+    <Hidden>false</Hidden>
+    <Index>1</Index>
+    <IsScalar>false</IsScalar>
+    <KeyField>id</KeyField>
+    <Name>FeaturedPostsImages</Name>
+    <Parameters>
+      <KeyField>true</KeyField>
+      <Label>id</Label>
+      <MaxLength>38</MaxLength>
+      <Name>id</Name>
+      <ParamType>Integer</ParamType>
+      <Required>true</Required>
+      <SelectedValue />
+      <Values>550b2e0a-0616-4beb-ae47-29dec878e6db</Values>
+    </Parameters>
+    <Parameters>
+      <KeyField>false</KeyField>
+      <Label>PostID</Label>
+      <MaxLength>38</MaxLength>
+      <Name>PostID</Name>
+      <ParamType>DropDown</ParamType>
+      <Required>true</Required>
+      <SelectedValue />
+      <Values>42d9f2b9-34d1-44ee-93bf-2ac2d630db26</Values>
+    </Parameters>
+    <Parameters>
+      <KeyField>false</KeyField>
+      <Label>Post Title</Label>
+      <MaxLength>38</MaxLength>
+      <Name>PostTitle</Name>
+      <ParamType>DropDown</ParamType>
+      <Required>true</Required>
+      <SelectedValue />
+      <Values>Post 1</Values>
+    </Parameters>
+    <Parameters>
+      <KeyField>false</KeyField>
+      <Label>Image</Label>
+      <MaxLength>100</MaxLength>
+      <Name>Image</Name>
+      <ParamType>String</ParamType>
+      <Required>false</Required>
+      <SelectedValue />
+      <Values>/image.axd?picture=2014/12/2nd_nav_thanks_message_bug1.gif</Values>
+    </Parameters>
+    <Parameters>
+      <KeyField>false</KeyField>
+      <Label>Size</Label>
+      <MaxLength>100</MaxLength>
+      <Name>ImageSize</Name>
+      <ParamType>String</ParamType>
+      <Required>false</Required>
+      <SelectedValue />
+      <Values>77.24 kb</Values>
+    </Parameters>
+    <ShowAdd>true</ShowAdd>
+    <ShowDelete>true</ShowDelete>
+    <ShowEdit>true</ShowEdit>
+    <BlogId>96d5b379-7e1d-4dac-a6ba-1e50db561b04</BlogId>
+  </Settings>
+  <ShowSettings>true</ShowSettings>
+  <Version>3.0.0.1</Version>
+</ManagedExtension>

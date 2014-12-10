@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Admin</author>
+  <title>Post 2 qqqqqqqqq</title>
+  <description>sdfgsdfgsdfgsdfgsdfg</description>
+  <content>sdfgsdfgsdfgsdfgsdfg&lt;p&gt;&lt;br&gt;&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2014-12-08 01:18:00</pubDate>
+  <lastModified>2014-12-09 10:03:18</lastModified>
+  <raters>0</raters>
+  <rating>0</rating>
+  <slug>post-2</slug>
+  <tags />
+  <comments />
+  <categories>
+    <category>c223353c-1aef-4a46-afd1-cb61ab1a792d</category>
+    <category>19770e74-9ec9-4cde-b2ab-e5051aaaf348</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,282 @@
+﻿.cloudware-explained-container
+{
+    position:relative;
+    float:right;
+    /*clear:both;   */
+    width:30%;
+    margin-left:1px;
+    margin-top:4px;
+}
+
+/*
+input[value|=CloudwareExplained] {
+    background: transparent url(../Images/GoToCCW_Normal.png) no-repeat 0 0;
+    width: 245px;
+    height: 37px;
+    float: right;
+    border: 0px;
+    font-size: 0px;
+    color: transparent;
+}
+
+input[value|=CloudwareExplained]:hover
+{
+    background: transparent url(../Images/GoToCCW_Rollover.png) no-repeat 0 0;
+    width:245px;
+    height:37px;
+    float:right;
+    border:0px;
+    font-size:0px;
+    color:transparent;
+}
+*/
+
+.cloudware-explained-image {
+    background: transparent url(../Images/GoToCCW_Normal.png) no-repeat 0 0;
+    width: 245px;
+    height: 37px;
+    float: right;
+    border: 0px;
+    font-size: 0px;
+    color: transparent;
+}
+
+.cloudware-explained-image:hover
+{
+    background: transparent url(../Images/GoToCCW_Rollover.png) no-repeat 0 0;
+    width:245px;
+    height:37px;
+    float:right;
+    border:0px;
+    font-size:0px;
+    color:transparent;
+}
+
+.read-more-container 
+{
+    position:relative;
+    width:100%;
+}
+
+
+.social-likes-container 
+{
+    position:relative;
+    float:left;
+    margin-top:10px;
+}
+
+.read-more {
+    background: transparent url(../Images/ReadMore_Normal.png) no-repeat 0 0;
+    width: 91px;
+    height: 34px;
+    font-size: 0px;
+    padding: 0px;
+    margin: auto;
+    float:right;
+}
+
+.read-more:hover {
+    background: transparent url(../Images/ReadMore_Rollover.png) no-repeat 0 0;
+    width: 91px;
+    height: 34px;
+    font-size: 0px;
+    padding: 0px;
+    margin: auto;
+    float:right;
+}
+
+/*
+.cloudware-explained-image
+{
+    background-color: #C0C0C0;
+    float:right;
+}
+*/
+
+.cc-ui-icon-twitter 
+{ 
+    background-position: -79px -12px; 
+}
+
+.cc-ui-icon-twitter:hover 
+{
+    background-position: -79px -95px;
+}
+
+.cc-ui-icon-facebook 
+{ 
+    background-position: -110px -12px; 
+}
+
+.cc-ui-icon-facebook:hover
+{ 
+    background-position: -110px -95px; 
+}
+
+.cc-ui-icon-youtube 
+{ 
+    background-position: -141px -12px; 
+}
+
+.cc-ui-icon-youtube:hover
+{ 
+    background-position: -141px -95px; 
+}
+
+.cc-ui-icon-linkedin 
+{ 
+    background-position: -173px -12px; 
+}
+
+.cc-ui-icon-linkedin:hover
+{ 
+    background-position: -173px -95px; 
+}
+
+.cc-ui-icon-google 
+{ 
+    background-position: -204px -12px; 
+}
+
+.cc-ui-icon-google:hover
+{ 
+    background-position: -204px -95px; 
+}
+
+.cc-ui-icon 
+{ 
+    width: 27px; 
+    height: 27px; 
+    background-image: url(../images/CCW_Iconography.png); 
+    display: block; 
+    text-indent: -99999px; 
+    overflow: visible; 
+    background-repeat: no-repeat;  
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+
+/* ICONS  */
+.social-icon-container
+{
+    float: right;
+    color:white;
+}
+
+.post-thumbnail-container 
+{
+    position:relative;
+    float:left;
+    width:165px;
+    height:137px;
+}
+
+.post-details-container 
+{
+    position:relative;
+    /*float:left;*/
+    /*width:100%;
+    height:100%;*/
+    overflow:hidden;
+    display:normal;
+    padding-left:20px;
+    min-height:150px;
+}
+
+.post-details-body-content
+{
+    position:relative;
+    float:left;
+    line-height:1.3;
+}
+
+.posts, .post h2 
+{
+    margin-top:0px;
+    margin-bottom:0px;
+}
+
+
+.categorylist .widget-header 
+{
+    color:#5c2a71;
+}
+
+.authorlist .widget-header 
+{
+    color:#c7006d;
+}
+
+.search input[type="button"] {
+    background-color: #A6A6A6;
+    border: medium none;
+    border-radius: 4px;
+    color: #fff;
+    height: 40px;
+    padding: 0;
+    width: 25%;
+}
+
+.search input[type="text"] {
+    background-color: #E6E6E6;
+    border: medium none;
+    height: 40px;
+    outline: medium none !important;
+    padding: 2%;
+    width: 75%;
+}
+/*
+Pink
+#c7006d
+
+Purple
+#5c2a71
+
+Blue
+#009adf
+
+Green
+#66a32a
+
+Grey
+#575756​
+*/
+
+
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: Vagabond, Arial, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+
+.font-normal-14px-black
+{
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.widget li a 
+{
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.widget-content
+{
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+}
+

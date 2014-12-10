@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<InstalledPackageFiles>
+    <item id="FeaturedPostsRotator" fileorder="1" filepath="Custom\Controls\FeaturedPostsRotator" isdirectory="True" />
+    <item id="FeaturedPostsRotator" fileorder="2" filepath="Custom\Controls\FeaturedPostsRotator\images" isdirectory="True" />
+    <item id="FeaturedPostsRotator" fileorder="3" filepath="Custom\Controls\FeaturedPostsRotator\images\apr.png" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="4" filepath="Custom\Controls\FeaturedPostsRotator\images\chk.png" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="5" filepath="Custom\Controls\FeaturedPostsRotator\images\del.png" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="6" filepath="Custom\Controls\FeaturedPostsRotator\images\inf.png" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="7" filepath="Custom\Controls\FeaturedPostsRotator\images\trans.png" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="8" filepath="Custom\Controls\FeaturedPostsRotator\js" isdirectory="True" />
+    <item id="FeaturedPostsRotator" fileorder="9" filepath="Custom\Controls\FeaturedPostsRotator\js\jquery.innerfade.js" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="10" filepath="Custom\Controls\FeaturedPostsRotator\js\jquery.innerfade.min.js" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="11" filepath="Custom\Controls\FeaturedPostsRotator\Admin.aspx" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="12" filepath="Custom\Controls\FeaturedPostsRotator\Admin.aspx.cs" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="13" filepath="Custom\Controls\FeaturedPostsRotator\style.css" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="14" filepath="Custom\Controls\FeaturedPostsRotator\Web.config" isdirectory="False" />
+    <item id="FeaturedPostsRotator" fileorder="1" filepath="bin\FeaturedPostsRotator.dll" isdirectory="False" />
+</InstalledPackageFiles>

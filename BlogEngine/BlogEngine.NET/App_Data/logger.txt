@@ -1,0 +1,6 @@
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 08/12/2014 00:57:18
+Installed package FeaturedPostsRotator by admin
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+Date: 10/12/2014 19:09:23
+Error checking stopforumspam.com: The remote server returned an error: (503) Server Unavailable.
