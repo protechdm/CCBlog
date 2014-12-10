@@ -280,3 +280,21 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.comment-form label, .comment-form a
+{
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation-posts a,input
+{
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
