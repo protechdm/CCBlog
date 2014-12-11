@@ -248,7 +248,8 @@ Grey
 body {
     background-color: #fff;
     color: #333;
-    font-family: Vagabond, Arial, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+/*    font-family: Vagabond, Arial, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;*/
+    font-family: "VAG Rounded W01 Light", Arial, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
     font-size: 14px;
     line-height: 1.42857;
 }
@@ -259,7 +260,7 @@ body {
     font-weight: normal;
     font-style: normal;
     color: #666666;
-    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
 }
 
 .widget li a 
@@ -268,7 +269,7 @@ body {
     font-weight: normal;
     font-style: normal;
     color: #666666;
-    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
 }
 
 .widget-content
@@ -277,7 +278,7 @@ body {
     font-weight: normal;
     font-style: normal;
     color: #666666;
-    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
 }
 
 .comment-form label, .comment-form a
@@ -286,7 +287,7 @@ body {
     font-weight: normal;
     font-style: normal;
     color: #666666;
-    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
 }
 
 .navigation-posts a,input
@@ -295,6 +296,5 @@ body {
     font-weight: normal;
     font-style: normal;
     color: #666666;
-    font-family: Arial, Helvetica, sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
 }
-
