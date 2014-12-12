@@ -134,6 +134,7 @@
     <Content Include="Account\Web.Config" />
     <Content Include="admin\admin.master" />
     <Content Include="admin\controllers\commentfilters.js" />
+    <Content Include="admin\controllers\businesstypes.js" />
     <Content Include="admin\controllers\pings.js" />
     <Content Include="admin\controllers\blogroll.js" />
     <Content Include="admin\controllers\files.js" />
@@ -146,6 +147,7 @@
     <Content Include="admin\Extensions\admin.master" />
     <Content Include="admin\index.cshtml" />
     <Content Include="admin\star-rating.css" />
+    <Content Include="admin\views\content\businesstypes.html" />
     <Content Include="admin\views\content\files.html" />
     <Content Include="admin\views\custom\packages.html" />
     <Content Include="admin\views\settings\controls\blogroll.html" />
@@ -200,6 +202,10 @@
     <Content Include="Custom\Themes\Standard\images\ReadMore_Rollover.png" />
     <Content Include="Custom\Themes\Standard\images\Surviving-the-Three-Phases-of-Small-Business.jpg" />
     <Content Include="Custom\Themes\Standard\images\The-Cloudy-Future-of-Collaboration.jpg" />
+    <Content Include="Custom\Widgets\BusinessType list\edit.ascx" />
+    <Content Include="Custom\Widgets\BusinessType list\screenshot.png" />
+    <Content Include="Custom\Widgets\BusinessType list\widget.ascx" />
+    <Content Include="Custom\Widgets\BusinessType list\widget.xml" />
     <Content Include="editors\bootstrap-wysiwyg\bootstrap-wysiwyg.js" />
     <Content Include="editors\bootstrap-wysiwyg\editor.js" />
     <Content Include="editors\bootstrap-wysiwyg\jquery.hotkeys.js" />
@@ -1561,6 +1567,7 @@
     <Compile Include="api\TagMiniView.aspx.designer.cs">
       <DependentUpon>TagMiniView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AppCode\Api\BusinessTypesController.cs" />
     <Compile Include="AppCode\Api\CommentFilterController.cs" />
     <Compile Include="AppCode\Api\BlogRollController.cs" />
     <Compile Include="AppCode\Api\BlogsController.cs" />
@@ -1594,6 +1601,7 @@
     <Compile Include="AppCode\Controls\AuthorList.cs" />
     <Compile Include="AppCode\Controls\BlogList.cs" />
     <Compile Include="AppCode\Controls\Blogroll.cs" />
+    <Compile Include="AppCode\Controls\BusinessTypeList.cs" />
     <Compile Include="AppCode\Controls\CategoryList.cs" />
     <Compile Include="AppCode\Controls\MobileThemeSwitch.cs" />
     <Compile Include="AppCode\Controls\MonthList.cs" />
@@ -1838,6 +1846,20 @@
     </Compile>
     <Compile Include="contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\Widgets\BusinessType list\edit.ascx.cs">
+      <DependentUpon>edit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Custom\Widgets\BusinessType list\edit.ascx.designer.cs">
+      <DependentUpon>edit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Custom\Widgets\BusinessType list\widget.ascx.cs">
+      <DependentUpon>widget.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Custom\Widgets\BusinessType list\widget.ascx.designer.cs">
+      <DependentUpon>widget.ascx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

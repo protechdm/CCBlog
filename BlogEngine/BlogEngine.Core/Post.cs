@@ -32,6 +32,12 @@
         private readonly StateList<Category> categories;
 
         /// <summary>
+        /// The business types.
+        /// </summary>
+        private Guid businesstype;
+
+
+        /// <summary>
         /// All comments, including deleted
         /// </summary>
         private readonly List<Comment> allcomments;
@@ -110,6 +116,11 @@
         ///     The title.
         /// </summary>
         private string title;
+
+        /// <summary>
+        ///     The featured flag.
+        /// </summary>
+        private bool isFeatured;
 
         #endregion
 
@@ -388,6 +399,16 @@
             }
         }
 
+        
+        public Guid BusinessType
+        {
+            get
+            {
+                return this.businesstype;
+            }
+            set { this.businesstype = value; }
+        }
+
         /// <summary>
         ///     Gets or sets the Content or the post.
         /// </summary>
@@ -451,6 +472,7 @@
             }
         }
 
+
         /// <summary>
         ///     Gets the next post relative to this one based on time.
         ///     <remarks>
@@ -503,6 +525,22 @@
             set
             {
                 base.SetValue("IsPublished", value, ref this.isPublished);
+            }
+        }
+
+        /// <summary>
+        ///     Gets or sets a value indicating whether or not the post is featured.
+        /// </summary>
+        public bool IsFeatured
+        {
+            get
+            {
+                return this.isFeatured;
+            }
+
+            set
+            {
+                base.SetValue("IsFeatured", value, ref this.isFeatured);
             }
         }
 
@@ -926,6 +964,13 @@
             return list;
         }
 
+        public static List<Post> GetFeaturedPosts()
+        {
+            var list = Posts.Where(f => f.isFeatured == true).ToList();
+            
+            return list;
+        }
+
         /// <summary>
         /// Get blog by author
         /// </summary>
@@ -959,6 +1004,11 @@
             return GetPostsByCategory(cat);
         }
 
+        public static List<Post> GetPostsByBusinessType(Guid businessTypeId)
+        {
+            return Post.ApplicablePosts.Where(p => p.BusinessType == businessTypeId).ToList();
+        }
+
         /// <summary>
         /// Returns all posts in the specified category
         /// </summary>
@@ -984,6 +1034,31 @@
                         if (c.Title == cat.Title && c.Id == cat.Id) col.Add(p);
                     }
                 }
+            }
+            //var col = Post.ApplicablePosts.Where(p => p.Categories.Contains(cat)).ToList();
+            col.Sort();
+            return col;
+        }
+
+        public static List<Post> GetPostsByBusinessType(BusinessType cat)
+        {
+            if (cat == null)
+            {
+                return null;
+            }
+            var col = new List<Post>();
+            foreach (var p in Post.ApplicablePosts)
+            {
+                
+                    //if (Blog.CurrentInstance.IsSiteAggregation)
+                    //{
+                    //    if (c.Id == cat.Id) col.Add(p);
+                    //}
+                    //else
+                    //{
+                        if (p.businesstype == cat.Id) col.Add(p);
+                    //}
+                
             }
             //var col = Post.ApplicablePosts.Where(p => p.Categories.Contains(cat)).ToList();
             col.Sort();

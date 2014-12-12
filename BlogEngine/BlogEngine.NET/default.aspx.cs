@@ -22,7 +22,6 @@ public partial class _default : BlogEngine.Core.Web.Controls.BlogBasePage
         //Check to see if Client is a SearchEngine or Bot trying to craw the website
         CheckBrowserCaps();
 
-
 		if (Page.IsCallback)
 			return;
 
@@ -59,6 +58,14 @@ public partial class _default : BlogEngine.Core.Web.Controls.BlogBasePage
             {
                 DisplayApmlFiltering();
             }
+        else if (Request.QueryString["featured"] != null)
+        {
+            DisplayFeatured();
+        }
+        else if (Request.RawUrl.ToLowerInvariant().Contains("/businesstypes/"))
+        {
+            DisplayBusinessTypes();
+        }
             else
             {
                 if (!BlogSettings.Instance.UseBlogNameInPageTitles)
@@ -242,6 +249,26 @@ public partial class _default : BlogEngine.Core.Web.Controls.BlogBasePage
             base.AddMetaTag("description", string.IsNullOrWhiteSpace(category.Description) ? Server.HtmlEncode(category.Title) : category.Description);
         }
 	}
+
+    private void DisplayFeatured()
+    {
+        PostList1.ContentBy = ServingContentBy.Author;
+        PostList1.Posts = Post.GetFeaturedPosts().ConvertAll(new Converter<Post, IPublishable>(delegate(Post p) { return p as IPublishable; }));
+        Title = "Featured Posts"; //Resources.labels.AllPostsBy + " " + Server.HtmlEncode(author);
+        base.AddMetaTag("description", Server.HtmlEncode(Title));
+    }
+    private void DisplayBusinessTypes()
+    {
+        if (!String.IsNullOrEmpty(Request.QueryString["id"]))
+        {
+            Guid categoryId = new Guid(Request.QueryString["id"]);
+            PostList1.ContentBy = ServingContentBy.Category;
+            BusinessType businessType = BusinessType.GetBusinessType(categoryId);
+            PostList1.Posts = Post.GetPostsByBusinessType(businessType).ConvertAll(new Converter<Post, IPublishable>(delegate(Post p) { return p as IPublishable; }));
+            Page.Title = businessType.BusinessTypeName;
+            base.AddMetaTag("description", Server.HtmlEncode(businessType.BusinessTypeName));
+        }
+    }
 
 	private void DisplayAuthors()
 	{

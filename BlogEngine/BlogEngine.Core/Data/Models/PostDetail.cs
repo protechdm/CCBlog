@@ -17,6 +17,10 @@ namespace BlogEngine.Core.Data.Models
         /// </summary>
         public Guid Id { get; set; }
         /// <summary>
+        /// BusinessType ID
+        /// </summary>
+        public Guid BusinessType { get; set; }
+        /// <summary>
         /// Post title
         /// </summary>
         public string Title { get; set; }
@@ -76,5 +80,7 @@ namespace BlogEngine.Core.Data.Models
         /// If the current user can edit this page.
         /// </summary>
         public bool CanUserEdit { get; set; }
+
+        public bool IsFeatured { get; set; }
     }
 }

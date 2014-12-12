@@ -25,6 +25,7 @@ public class UnityConfig
         unity.RegisterType<TrashController>();
         unity.RegisterType<TagsController>();
         unity.RegisterType<CategoriesController>();
+        unity.RegisterType<BusinessTypesController>();
         unity.RegisterType<CustomFieldsController>();
         unity.RegisterType<UsersController>();
         unity.RegisterType<RolesController>();
@@ -42,6 +43,7 @@ public class UnityConfig
         unity.RegisterType<ITrashRepository, TrashRepository>(new HierarchicalLifetimeManager());
         unity.RegisterType<ITagRepository, TagRepository>(new HierarchicalLifetimeManager());
         unity.RegisterType<ICategoryRepository, CategoryRepository>(new HierarchicalLifetimeManager());
+        unity.RegisterType<IBusinessTypeRepository, BusinessTypeRepository>(new HierarchicalLifetimeManager());
         unity.RegisterType<ICustomFieldRepository, CustomFieldRepository>(new HierarchicalLifetimeManager());
         unity.RegisterType<IUsersRepository, UsersRepository>(new HierarchicalLifetimeManager());
         unity.RegisterType<IRolesRepository, RolesRepository>(new HierarchicalLifetimeManager());

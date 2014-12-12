@@ -54,14 +54,14 @@ namespace Widgets.TextBox
         /// </summary>
         public override void LoadWidget()
         {
-            var settings = this.GetSettings();
-            if (!settings.ContainsKey("content"))
-            {
-                return;
-            }
+            //var settings = this.GetSettings();
+            //if (!settings.ContainsKey("content"))
+            //{
+            //    return;
+            //}
 
-            var text = new LiteralControl(settings["content"]);
-            this.Controls.Add(text);
+            //var text = new LiteralControl(settings["content"]);
+            //this.Controls.Add(text);
         }
 
         #endregion

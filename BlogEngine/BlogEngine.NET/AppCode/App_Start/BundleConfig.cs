@@ -89,6 +89,7 @@ public class BundleConfig
             .Include("~/admin/controllers/pages.js")
             .Include("~/admin/controllers/tags.js")
             .Include("~/admin/controllers/categories.js")
+            .Include("~/admin/controllers/businesstypes.js")
             .Include("~/admin/controllers/files.js")
             .Include("~/admin/controllers/comments.js")
             .Include("~/admin/controllers/users.js")

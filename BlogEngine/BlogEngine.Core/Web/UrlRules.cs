@@ -168,6 +168,27 @@ namespace BlogEngine.Core.Web
             }
         }
 
+        public static void RewriteBusinessTypes(HttpContext context, string url)
+        {
+            var title = ExtractTitle(context, url);
+            foreach (var cat in from cat in BusinessType.BusinessTypes
+                                let legalTitle = Utils.RemoveIllegalCharacters(cat.BusinessTypeName).ToLowerInvariant()
+                                where title.Equals(legalTitle, StringComparison.OrdinalIgnoreCase)
+                                select cat)
+            {
+                if (url.Contains("/FEED/"))
+                {
+                    context.RewritePath(string.Format("syndication.axd?category={0}{1}", cat.Id, GetQueryString(context)), false);
+                }
+                else
+                {
+                    context.RewritePath(
+                        string.Format("{0}default.aspx?id={1}{2}", Utils.ApplicationRelativeWebRoot, cat.Id, GetQueryString(context)), false);
+                    break;
+                }
+            }
+        }
+
         /// <summary>
         /// Rewrites the tag.
         /// </summary>

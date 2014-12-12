@@ -1,4 +1,5 @@
-﻿using BlogEngine.Core.Data.Contracts;
+﻿using System.Data;
+using BlogEngine.Core.Data.Contracts;
 using BlogEngine.Core.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,8 @@ namespace BlogEngine.Core.Data
             LoadAuthors();
 
             LoadCategories();
+
+            LoadBusinessType();
 
             LoadThemes();
 
@@ -137,6 +140,27 @@ namespace BlogEngine.Core.Data
                 cats.Add(new SelectOption { OptionName = cat.Title, OptionValue = cat.Id.ToString() });
             }
             lookups.CategoryList = cats;
+        }
+
+        void LoadBusinessType()
+        {
+            var conn = new System.Data.SqlClient.SqlConnection();
+            var command = new System.Data.SqlClient.SqlCommand();
+            conn.ConnectionString =
+                "Data Source=94.126.43.196;Initial Catalog=BlogEngine;Integrated Security=False;Trusted_Connection=False;User Id=sa;Password=Her0sandwich=sql";
+            command.Connection = conn;
+            command.CommandType = CommandType.Text;
+            command.CommandText = "select * from be_BusinessTypes";
+            conn.Open();
+            var data = new System.Data.DataSet();
+            var adapter = new System.Data.SqlClient.SqlDataAdapter();
+            adapter.SelectCommand = command;
+            adapter.Fill(data);
+            conn.Close();
+
+            var bt = (from DataRow row in data.Tables[0].Rows select new SelectOption {OptionName = row[1].ToString(), OptionValue = row[0].ToString()}).ToList();
+
+            lookups.BusinessTypeList = bt;
         }
 
         void LoadThemes()

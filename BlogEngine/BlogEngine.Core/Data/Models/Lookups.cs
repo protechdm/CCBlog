@@ -28,6 +28,10 @@ namespace BlogEngine.Core.Data.Models
         /// </summary>
         public IEnumerable<SelectOption> CategoryList { get; set; }
         /// <summary>
+        /// Business Type list
+        /// </summary>
+        public IEnumerable<SelectOption> BusinessTypeList { get; set; }
+        /// <summary>
         /// List of installed themes
         /// </summary>
         public IEnumerable<SelectOption> InstalledThemes { get; set; }

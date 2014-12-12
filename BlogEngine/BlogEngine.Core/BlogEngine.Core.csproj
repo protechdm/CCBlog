@@ -141,6 +141,7 @@
     <Compile Include="BlogConfig.cs" />
     <Compile Include="BlogGenerator.cs" />
     <Compile Include="BlogGeneratorConfig.cs" />
+    <Compile Include="BusinessType.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Compilation\BaseServerObjectExpressionBuilder.cs" />
     <Compile Include="Compilation\CodeExpressionBuilder.cs" />
@@ -153,7 +154,9 @@
     <Compile Include="Compilation\ReflectExpressionBuilder.cs" />
     <Compile Include="Compilation\ServerVariableExpressionBuilder.cs" />
     <Compile Include="Compilation\SessionExpressionBuilder.cs" />
+    <Compile Include="Data\BusinessTypeRepository.cs" />
     <Compile Include="Data\CommentFilterRepository.cs" />
+    <Compile Include="Data\Contracts\IBusinessTypeRepository.cs" />
     <Compile Include="Data\Contracts\ICommentFilterRepository.cs" />
     <Compile Include="Data\Contracts\ICustomFieldRepository.cs" />
     <Compile Include="Data\Contracts\IFileManagerRepository.cs" />
@@ -180,6 +183,7 @@
     <Compile Include="Data\LookupsRepository.cs" />
     <Compile Include="Data\Models\Blog.cs" />
     <Compile Include="Data\Models\BlogItem.cs" />
+    <Compile Include="Data\Models\BusinessTypeItem.cs" />
     <Compile Include="Data\Models\CategoryItem.cs" />
     <Compile Include="Data\Models\CommentDetail.cs" />
     <Compile Include="Data\Models\CommentFilterItem.cs" />
