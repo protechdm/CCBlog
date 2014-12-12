@@ -48,7 +48,7 @@
         /// The category to delete.
         /// </param>
         public abstract void DeleteCategory(Category category);
-
+        public abstract void DeleteBusinessType(BusinessType businessType);
         /// <summary>
         /// Deletes a Page from the data store specified by the provider.
         /// </summary>
@@ -90,6 +90,7 @@
         /// </summary>
         /// <returns>A list of Category.</returns>
         public abstract List<Category> FillCategories(Blog blog);
+        public abstract List<BusinessType> FillBusinessTypes();
 
         /// <summary>
         /// Retrieves all Pages from the provider and returns them in a List.
@@ -154,6 +155,7 @@
         /// </param>
         public abstract void InsertCategory(Category category);
 
+        public abstract void InsertBusinessType(BusinessType businessType);
         /// <summary>
         /// Inserts a new Page into the data store specified by the provider.
         /// </summary>
@@ -289,7 +291,7 @@
         /// <param name="id">The Category id.</param>
         /// <returns>A Category.</returns>
         public abstract Category SelectCategory(Guid id);
-
+        public abstract BusinessType SelectBusinessType(Guid id);
         /// <summary>
         /// Retrieves a Page from the provider based on the specified id.
         /// </summary>
@@ -359,7 +361,7 @@
         /// The category to update.
         /// </param>
         public abstract void UpdateCategory(Category category);
-
+        public abstract void UpdateBusinessType(BusinessType businesstype);
         /// <summary>
         /// Updates an existing Page in the data store specified by the provider.
         /// </summary>

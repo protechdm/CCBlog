@@ -65,6 +65,13 @@
                     }
                 }
             }
+            
+            for (var b = 0; b < $scope.lookups.BusinessTypeList.length; b++) {
+                if ($scope.post.BusinessType === $scope.lookups.BusinessTypeList[b].OptionValue) {
+                    $scope.lookups.BusinessTypeList[b].IsSelected = true;
+                }
+            }
+
             var existingTags = [];
             if ($scope.post.Tags != null) {
                 for (var i = 0; i < $scope.post.Tags.length; i++) {
@@ -105,6 +112,23 @@
                 }
             }
         }
+
+        $scope.post.BusinessType = $('hid-bt').val();
+
+        if ($scope.lookups.BusinessTypeList != null) {
+            for (var b = 0; b < $scope.lookups.BusinessTypeList.length; b++) {
+                var bt = $scope.lookups.BusinessTypeList[b];
+                if (bt.IsSelected) {
+                    var cbtAdd = { "IsChecked": false, "Id": bt.OptionValue, "Title": bt.OptionName };
+                    $scope.post.BusinessType = bt.OptionValue;
+                }
+            }
+        }
+
+        var z = $('input[name=bts]:checked').val();
+        
+
+        //$scope.post.IsFeatured = $("#chkfeatured").
         $scope.post.Tags = get_tags();
 
         if ($scope.post.Id) {

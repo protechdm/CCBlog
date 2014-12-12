@@ -148,6 +148,11 @@ namespace BlogEngine.Core.Providers
             Provider.DeleteCategory(category);
         }
 
+        public static void DeleteBusinessType(BusinessType businessType)
+        {
+            Provider.DeleteBusinessType(businessType);
+        }
+
         /// <summary>
         /// Deletes the specified Page from the current provider.
         /// </summary>
@@ -201,6 +206,11 @@ namespace BlogEngine.Core.Providers
         public static List<Category> FillCategories(Blog blog)
         {
             return Provider.FillCategories(blog);
+        }
+
+        public static List<BusinessType> FillBusinessTypes()
+        {
+            return Provider.FillBusinessTypes();
         }
 
         /// <summary>
@@ -307,6 +317,11 @@ namespace BlogEngine.Core.Providers
         public static void InsertCategory(Category category)
         {
             Provider.InsertCategory(category);
+        }
+
+        public static void InsertBusinessType(BusinessType businessType)
+        {
+            Provider.InsertBusinessType(businessType);
         }
 
         /// <summary>
@@ -492,6 +507,11 @@ namespace BlogEngine.Core.Providers
             return Provider.SelectCategory(id);
         }
 
+        public static BusinessType SelectBusinessType(Guid id)
+        {
+            return Provider.SelectBusinessType(id);
+        }
+
         /// <summary>
         /// Returns a Page based on the specified id.
         /// </summary>
@@ -587,6 +607,11 @@ namespace BlogEngine.Core.Providers
         public static void UpdateCategory(Category category)
         {
             Provider.UpdateCategory(category);
+        }
+
+        public static void UpdateBusinessType(BusinessType businesstype)
+        {
+            Provider.UpdateBusinessType(businesstype);
         }
 
         /// <summary>

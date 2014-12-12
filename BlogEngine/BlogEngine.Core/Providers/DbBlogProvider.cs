@@ -300,6 +300,26 @@ namespace BlogEngine.Core.Providers
             }
         }
 
+        public override void DeleteBusinessType(BusinessType businessType)
+        {
+            var businesstypes = BusinessType.BusinessTypes;
+            businesstypes.Remove(businessType);
+
+            using (var conn = this.CreateConnection())
+            {
+                if (conn.HasConnection)
+                {
+                    var sqlQuery = string.Format("DELETE FROM be_businesstypes WHERE id = '{1}'", this.tablePrefix, businessType.Id);
+
+                    using (var cmd = conn.CreateTextCommand(sqlQuery))
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+
+                }
+            }
+        }
+
         /// <summary>
         /// Deletes a page from the database
         /// </summary>
@@ -510,6 +530,37 @@ namespace BlogEngine.Core.Providers
             }
 
             return categories;
+        }
+
+        public override List<BusinessType> FillBusinessTypes()
+        {
+            var businesstypes = new List<BusinessType>();
+
+            using (var conn = this.CreateConnection())
+            {
+                if (conn.HasConnection)
+                {
+                    using (var cmd = conn.CreateTextCommand(string.Format("SELECT id, BusinessTypeName FROM {0}businesstypes ", this.tablePrefix)))
+                    {
+                        using (var rdr = cmd.ExecuteReader())
+                        {
+                            while (rdr.Read())
+                            {
+                                var cat = new BusinessType()
+                                { 
+                                    BusinessTypeName = rdr.GetString(1),
+                                    Id = new Guid(rdr.GetGuid(0).ToString())
+                                };
+
+                                businesstypes.Add(cat);
+                                cat.MarkOld();
+                            }
+                        }
+                    }
+                }
+            }
+
+            return businesstypes;
         }
 
         /// <summary>
@@ -821,6 +872,26 @@ namespace BlogEngine.Core.Providers
                         parms.Add(conn.CreateParameter(FormatParamName("description"), category.Description));
                         parms.Add(conn.CreateParameter(FormatParamName("parentid"), (category.Parent == null ? (object)DBNull.Value : category.Parent.ToString())));
 
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        public override void InsertBusinessType(BusinessType businessType)
+        {
+            var businessTypes = BusinessType.BusinessTypes;
+            businessTypes.Add(businessType);
+            businessTypes.Sort();
+
+            using (var conn = this.CreateConnection())
+            {
+                if (conn.HasConnection)
+                {
+                    var sqlQuery = string.Format("INSERT INTO be_BusinessTypes (ID, BusinessTypeName) VALUES ('{0}', '{1}')", Guid.NewGuid(), businessType.BusinessTypeName);
+
+                    using (var cmd = conn.CreateTextCommand(sqlQuery))
+                    {
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -1362,6 +1433,21 @@ namespace BlogEngine.Core.Providers
             return category;
         }
 
+        public override BusinessType SelectBusinessType(Guid id)
+        {
+            var businesstypes = BusinessType.BusinessTypes;
+
+            var businesstype = new BusinessType();
+
+            foreach (var cat in businesstypes.Where(cat => cat.Id == id))
+            {
+                businesstype = cat;
+            }
+
+            businesstype.MarkOld();
+            return businesstype;
+        }
+
         /// <summary>
         /// Returns a page for given ID
         /// </summary>
@@ -1469,7 +1555,7 @@ namespace BlogEngine.Core.Providers
             {
                 if (conn.HasConnection)
                 {
-                    var sqlQuery = string.Format("SELECT PostID, Title, Description, PostContent, DateCreated, DateModified, Author, IsPublished, IsCommentEnabled, Raters, Rating, Slug, IsDeleted FROM {0}Posts WHERE BlogID = {1}blogid AND PostID = {1}id", this.tablePrefix, this.parmPrefix);
+                    var sqlQuery = string.Format("SELECT PostID, Title, Description, PostContent, DateCreated, DateModified, Author, IsPublished, IsCommentEnabled, Raters, Rating, Slug, IsDeleted, IsFeatured, BusinessType FROM {0}Posts WHERE BlogID = {1}blogid AND PostID = {1}id", this.tablePrefix, this.parmPrefix);
                     using (var cmd = conn.CreateTextCommand(sqlQuery))
                     {
                         cmd.Parameters.Add(conn.CreateParameter(FormatParamName("blogid"), Blog.CurrentInstance.Id.ToString()));
@@ -1524,6 +1610,16 @@ namespace BlogEngine.Core.Providers
                                 {
                                     post.IsDeleted = rdr.GetBoolean(12);
                                 }
+                                
+                                if (!rdr.IsDBNull(13))
+                                {
+                                    post.IsFeatured = rdr.GetBoolean(13);
+                                }
+                                if (!rdr.IsDBNull(14))
+                                {
+                                    post.BusinessType = rdr.GetGuid(14);
+                                }
+
                             }
                         }
 
@@ -2204,6 +2300,28 @@ namespace BlogEngine.Core.Providers
                         p.Add(conn.CreateParameter(FormatParamName("description"), category.Description));
                         p.Add(conn.CreateParameter(FormatParamName("parentid"), (category.Parent == null ? (object)DBNull.Value : category.Parent.ToString())));
 
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+
+        public override void UpdateBusinessType(BusinessType businesstype)
+        {
+            var businesstypes = BusinessType.BusinessTypes;
+            businesstypes.Remove(businesstype);
+            businesstypes.Add(businesstype);
+            businesstypes.Sort();
+
+            using (var conn = this.CreateConnection())
+            {
+                if (conn.HasConnection)
+                {
+                    var sqlQuery = string.Format("UPDATE {0}businesstypes SET businesstypename = '{1}' WHERE id = '{2}'", this.tablePrefix, businesstype.BusinessTypeName, businesstype.Id);
+
+                    using (var cmd = conn.CreateTextCommand(sqlQuery))
+                    {
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -2913,7 +3031,7 @@ namespace BlogEngine.Core.Providers
             {
                 if (conn.HasConnection)
                 {
-                    using (var cmd = conn.CreateTextCommand(string.Format("SELECT NoteId, Note, Updated FROM {0}QuickNotes where UserName = '{1}' and BlogId = '{2}'", tablePrefix, userId, Blog.CurrentInstance.Id.ToString())))
+                    using (var cmd = conn.CreateTextCommand(string.Format("SELECT NoteId, Note, Updated FROM {0}QuickNotes where UserName = '{1}' and BlogId = '{2}' order by Updated desc", tablePrefix, userId, Blog.CurrentInstance.Id.ToString())))
                     {
                         using (var rdr = cmd.ExecuteReader())
                         {

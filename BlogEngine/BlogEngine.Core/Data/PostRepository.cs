@@ -176,7 +176,9 @@ namespace BlogEngine.Core.Data
                 IsPublished = post.IsPublished,
                 IsDeleted = post.IsDeleted,
                 CanUserEdit = post.CanUserEdit,
-                CanUserDelete = post.CanUserDelete
+                CanUserDelete = post.CanUserDelete,
+                BusinessType = post.BusinessType,
+                IsFeatured = post.IsFeatured
             };
         }
 
@@ -190,6 +192,8 @@ namespace BlogEngine.Core.Data
             post.HasCommentsEnabled = detail.HasCommentsEnabled;
             post.IsDeleted = detail.IsDeleted;
             post.DateCreated = DateTime.ParseExact(detail.DateCreated, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture);
+            post.BusinessType = detail.BusinessType;
+            post.IsFeatured = detail.IsFeatured;
 
             // if changing slug, should be unique
             if (post.Slug != detail.Slug)

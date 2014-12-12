@@ -50,6 +50,7 @@
                         <li><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/categories">{{lbl.categories}}</a></li>
                         <li><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/tags">{{lbl.tags}}</a></li>
                         <li><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/files">{{lbl.fileManager}}</a></li>
+                        <li><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/businesstypes">xBusiness types</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,6 +63,9 @@
                             <input type="text" id="txtTitle" name="txtTitle" placeholder="{{lbl.titleOfPost}}..." class="form-control" data-ng-model="post.Title" />
                             @RenderPage(BlogConfig.DefaultEditor)
                             @RenderPage("_uploadbtns.cshtml")
+
+<div><input type="checkbox" data-ng-model="post.IsFeatured" id="chkfeatured" />Featured</div>
+
                         </div>
                         <div class="col col-md-3">
                             <button type="button" data-target="#modal-form" data-toggle="modal" class="btn btn-default btn-block" style="margin-bottom:20px;"><i class="fa fa-cog"></i>{{lbl.settings}}</button>
@@ -69,15 +73,32 @@
                                 <div class="panel-heading">
                                     <i class="fa fa-folder"></i> {{lbl.categories}}
                                 </div>
+<input type="hidden" id="hid-bt" data-ng-model="post.BusinessType"/>
                                 <ul class="list-group categories-list">
                                     <li class="list-group-item" ng-repeat="cat in lookups.CategoryList">
                                         <label>
-                                            <input type="checkbox" id="cat-{{cat.OptionValue}}" data-ng-model="cat.IsSelected" />
+                                            <input type="checkbox" onclick="$('#hid-bt').val($(this).val());" id="cat-{{cat.OptionValue}}" data-ng-model="cat.IsSelected" />
                                             {{cat.OptionName}}
                                         </label>
                                     </li>
                                 </ul>
                             </div>
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <i class="fa fa-folder"></i> Business Type
+                                </div>
+                                <ul class="list-group categories-list">
+                                    <li class="list-group-item" ng-repeat="bt in lookups.BusinessTypeList">
+                                        <label>
+                                            
+                                            <input name="bts" type="radio" id="bt-{{bt.OptionValue}}" data-ng-model="bt.IsSelected" data-ng-value="bt.IsSelected" />
+                                            {{bt.OptionName}}
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+
                             <div class="panel panel-default post-tags-selector">
                                 <div class="panel-heading">
                                     <i class="fa fa-tag fa-sm"></i>
@@ -129,5 +150,7 @@
     <script src="~/editors/tinymce/editor.js"></script>
     }
 }
+
+    
 </body>
 </html>

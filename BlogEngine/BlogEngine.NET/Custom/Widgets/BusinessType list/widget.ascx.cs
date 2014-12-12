@@ -1,27 +1,26 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <summary>
-//   TextBox widget
+//   The categories widget.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Widgets.TextBox
-{
-    using System.Web.UI;
 
+namespace Widgets.BusinessTypeList
+{
     using App_Code.Controls;
 
     /// <summary>
-    /// TextBox widget
+    /// The Business Types widget.
     /// </summary>
     public partial class Widget : WidgetBase
     {
         #region Properties
 
         /// <summary>
-        ///     Gets wether or not the widget can be edited.
-        ///     <remarks>
-        ///         The only way a widget can be editable is by adding a edit.ascx file to the widget folder.
-        ///     </remarks>
+        /// Gets a value indicating whether or not the widget can be edited.
+        /// <remarks>
+        /// The only way a widget can be editable is by adding a edit.ascx file to the widget folder.
+        /// </remarks>
         /// </summary>
         /// <value></value>
         public override bool IsEditable
@@ -33,16 +32,18 @@ namespace Widgets.TextBox
         }
 
         /// <summary>
-        ///     Gets the name. It must be exactly the same as the folder that contains the widget.
+        /// Gets the name. It must be exactly the same as the folder that contains the widget.
         /// </summary>
         /// <value></value>
         public override string Name
         {
             get
             {
-                return "TextBox";
+                return "BusinessType list";
             }
         }
+
+
 
         #endregion
 
@@ -50,18 +51,21 @@ namespace Widgets.TextBox
 
         /// <summary>
         /// This method works as a substitute for Page_Load. You should use this method for
-        ///     data binding etc. instead of Page_Load.
+        /// data binding etc. instead of Page_Load.
         /// </summary>
         public override void LoadWidget()
         {
-            //var settings = this.GetSettings();
-            //if (!settings.ContainsKey("content"))
-            //{
-            //    return;
-            //}
+            var settings = this.GetSettings();
+            var showRssIcon = true;
+            var showPostCount = true;
+            if (settings.ContainsKey("showrssicon"))
+            {
+                bool.TryParse(settings["showrssicon"], out showRssIcon);
+                bool.TryParse(settings["showpostcount"], out showPostCount);
+            }
 
-            //var text = new LiteralControl(settings["content"]);
-            //this.Controls.Add(text);
+            this.uxBusinessTypeList.ShowRssIcon = showRssIcon;
+            this.uxBusinessTypeList.ShowPostCount = showPostCount;
         }
 
         #endregion

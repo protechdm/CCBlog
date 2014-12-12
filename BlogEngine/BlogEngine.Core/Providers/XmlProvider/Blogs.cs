@@ -14,6 +14,25 @@ namespace BlogEngine.Core.Providers
     {
         #region Public Methods
 
+        public override void InsertBusinessType(BusinessType businessType)
+        {
+        }
+        public override void UpdateBusinessType(BusinessType businessType)
+        {
+        }
+        public override List<BusinessType> FillBusinessTypes()
+        {
+            return new List<BusinessType>();
+        }
+
+        public override BusinessType SelectBusinessType(Guid id)
+        {
+            return new BusinessType();
+        }
+
+        public override void DeleteBusinessType(BusinessType businessType)
+        {
+        }
         /// <summary>
         /// Deletes a Blog
         /// </summary>
