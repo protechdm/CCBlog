@@ -98,7 +98,6 @@
         spinOn();
         $scope.post.Content = editorGetHtml();
         $scope.post.Author = $scope.selectedAuthor.OptionValue;
-        //$scope.post.BusinessType = $scope.selectedAuthor.OptionValue;
         if ($scope.post.Slug.length == 0) {
             $scope.post.Slug = toSlug($scope.post.Title);
         }
@@ -113,16 +112,21 @@
                 }
             }
         }
-        
+
+        $scope.post.BusinessType = $('hid-bt').val();
+
         if ($scope.lookups.BusinessTypeList != null) {
             for (var b = 0; b < $scope.lookups.BusinessTypeList.length; b++) {
                 var bt = $scope.lookups.BusinessTypeList[b];
                 if (bt.IsSelected) {
-                    //var cbtAdd = { "IsChecked": false, "Id": bt.OptionValue, "Title": bt.OptionName };
+                    var cbtAdd = { "IsChecked": false, "Id": bt.OptionValue, "Title": bt.OptionName };
                     $scope.post.BusinessType = bt.OptionValue;
                 }
             }
         }
+
+        var z = $('input[name=bts]:checked').val();
+        
 
         //$scope.post.IsFeatured = $("#chkfeatured").
         $scope.post.Tags = get_tags();

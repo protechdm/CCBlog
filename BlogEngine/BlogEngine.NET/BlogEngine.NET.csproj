@@ -789,7 +789,9 @@
     <Content Include="admin\controllers\users.js" />
     <Content Include="admin\editor\editor.js" />
     <Content Include="admin\editor\pagecontroller.js" />
-    <Content Include="admin\editor\postcontroller.js" />
+    <None Include="admin\editor\postcontroller.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="admin\Extensions\Settings.ascx" />
     <Content Include="admin\Extensions\Settings.aspx" />
     <Content Include="admin\menu.ascx" />
