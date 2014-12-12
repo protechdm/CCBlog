@@ -50,7 +50,7 @@
                         <li><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/categories">{{lbl.categories}}</a></li>
                         <li><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/tags">{{lbl.tags}}</a></li>
                         <li><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/files">{{lbl.fileManager}}</a></li>
-                        <li><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/businesstypes">xBusiness types</a></li>
+                        <li><a href="{{SiteVars.RelativeWebRoot}}admin/#/content/businesstypes">Business types</a></li>
                     </ul>
                 </div>
             </div>
@@ -73,11 +73,11 @@
                                 <div class="panel-heading">
                                     <i class="fa fa-folder"></i> {{lbl.categories}}
                                 </div>
-<input type="hidden" id="hid-bt" data-ng-model="post.BusinessType"/>
+
                                 <ul class="list-group categories-list">
                                     <li class="list-group-item" ng-repeat="cat in lookups.CategoryList">
                                         <label>
-                                            <input type="checkbox" onclick="$('#hid-bt').val($(this).val());" id="cat-{{cat.OptionValue}}" data-ng-model="cat.IsSelected" />
+                                            <input type="checkbox" id="cat-{{cat.OptionValue}}" data-ng-model="cat.IsSelected" />
                                             {{cat.OptionName}}
                                         </label>
                                     </li>
@@ -88,7 +88,13 @@
                                 <div class="panel-heading">
                                     <i class="fa fa-folder"></i> Business Type
                                 </div>
-                                <ul class="list-group categories-list">
+
+                                <select data-ng-model="post.BusinessType">
+                                    <option ng-repeat="bt in lookups.BusinessTypeList" value="{{bt.OptionValue}}">{{bt.OptionName}}</option>
+                                </select><br>
+
+
+                                <!--<ul class="list-group categories-list">
                                     <li class="list-group-item" ng-repeat="bt in lookups.BusinessTypeList">
                                         <label>
                                             
@@ -96,7 +102,7 @@
                                             {{bt.OptionName}}
                                         </label>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
 
                             <div class="panel panel-default post-tags-selector">

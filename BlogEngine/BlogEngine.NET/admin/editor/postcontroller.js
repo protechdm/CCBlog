@@ -113,20 +113,15 @@
             }
         }
 
-        $scope.post.BusinessType = $('hid-bt').val();
-
-        if ($scope.lookups.BusinessTypeList != null) {
-            for (var b = 0; b < $scope.lookups.BusinessTypeList.length; b++) {
-                var bt = $scope.lookups.BusinessTypeList[b];
-                if (bt.IsSelected) {
-                    var cbtAdd = { "IsChecked": false, "Id": bt.OptionValue, "Title": bt.OptionName };
-                    $scope.post.BusinessType = bt.OptionValue;
-                }
-            }
-        }
-
-        var z = $('input[name=bts]:checked').val();
-        
+        //if ($scope.lookups.BusinessTypeList != null) {
+        //    for (var b = 0; b < $scope.lookups.BusinessTypeList.length; b++) {
+        //        var bt = $scope.lookups.BusinessTypeList[b];
+        //        if (bt.IsSelected) {
+        //            var cbtAdd = { "IsChecked": false, "Id": bt.OptionValue, "Title": bt.OptionName };
+        //            $scope.post.BusinessType = bt.OptionValue;
+        //        }
+        //    }
+        //}
 
         //$scope.post.IsFeatured = $("#chkfeatured").
         $scope.post.Tags = get_tags();
