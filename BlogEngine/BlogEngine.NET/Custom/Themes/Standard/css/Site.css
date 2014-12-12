@@ -259,7 +259,8 @@ body {
     background-color: #fff;
     color: #333;
 /*    font-family: Vagabond, Arial, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;*/
-    font-family: "VAG Rounded W01 Light", Arial, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+/*    font-family: "VAG Rounded W01 Light", Arial, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;*/
+    font-family: "Varela Round", Arial, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
     font-size: 14px;
     line-height: 1.42857;
 }
@@ -311,5 +312,39 @@ body {
 
 .navbar 
 {
-    display:none;
+    /*display:none;*/
+}
+
+.footer .end-line {
+    background-color: #575756;
+    font-size: 12px;
+    line-height: 50px;
+    min-height: 50px;
+    text-transform: uppercase;
+}
+
+/*
+PINK - C7006D
+    PURPLE - 5C2A71
+    BLUE - 009ADF
+    GREEN - 66A32A
+    GREY - 575756    
+*/
+.newsletter .widget-header
+{
+    border-color:#C7006D !important;
+}
+
+.recentposts .widget-header
+{
+    border-color:#C7006D !important;
+}
+
+.twitter .widget-header
+{
+    border-color:#C7006D !important;
+}
+
+.footer .end-line {
+    text-transform: none;
 }
