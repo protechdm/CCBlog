@@ -219,6 +219,16 @@ input[value|=CloudwareExplained]:hover
     width: 25%;
 }
 
+.search input[type="button"]:hover {
+    background-color: #009ADF;
+    border: medium none;
+    border-radius: 4px;
+    color: #fff;
+    height: 40px;
+    padding: 0;
+    width: 25%;
+}
+
 .search input[type="text"] {
     background-color: #E6E6E6;
     border: medium none;
@@ -297,4 +307,9 @@ body {
     font-style: normal;
     color: #666666;
     /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+.navbar 
+{
+    display:none;
 }
