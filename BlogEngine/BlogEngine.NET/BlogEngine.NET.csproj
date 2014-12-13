@@ -14,7 +14,7 @@
     <RootNamespace>BlogEngine.NET</RootNamespace>
     <AssemblyName>BlogEngine.NET</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -794,9 +794,7 @@
     <Content Include="admin\controllers\users.js" />
     <Content Include="admin\editor\editor.js" />
     <Content Include="admin\editor\pagecontroller.js" />
-    <None Include="admin\editor\postcontroller.js">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <Content Include="admin\editor\postcontroller.js" />
     <Content Include="admin\Extensions\Settings.ascx" />
     <Content Include="admin\Extensions\Settings.aspx" />
     <Content Include="admin\menu.ascx" />
@@ -2350,11 +2348,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64079</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64079/</IISUrl>
+          <IISUrl>http://localhost/BlogEngine.NET</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
