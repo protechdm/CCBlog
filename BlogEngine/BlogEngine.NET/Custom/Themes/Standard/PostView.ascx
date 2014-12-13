@@ -16,7 +16,7 @@
                     <h2 class="post-title">
                         <a href="<%=Post.RelativeOrAbsoluteLink %>"><%=Server.HtmlEncode(Post.Title) %></a>
                     </h2>
-                <div class="clearfix  font-normal-14px-black" style="position:relative;width:100%;">
+                <div class="clearfix  font-normal-14px-purple" style="position:relative;width:100%;">
                     <span class="post-date">By&nbsp;<%=Post.Author%>&nbsp;</span>
                     <span class="post-date">&nbsp;|&nbsp;&nbsp;<%=Post.DateCreated.ToString("MMMM dd, yyyy")%></span>
                 </div>
