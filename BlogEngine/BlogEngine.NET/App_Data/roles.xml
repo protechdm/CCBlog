@@ -4,12 +4,14 @@
     <name>Administrators</name>
     <users>
       <user>Admin</user>
+      <user>Glyn</user>
     </users>
   </role>
   <role>
     <name>Editors</name>
     <users>
       <user>Admin</user>
+      <user>Glyn</user>
     </users>
   </role>
   <role>
