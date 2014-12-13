@@ -953,7 +953,7 @@ namespace BlogEngine.Core.Providers
                 {
                     if (conn.HasConnection)
                     {
-                        var sqlQuery = string.Format("INSERT INTO {0}Posts (BlogID, PostID, Title, Description, PostContent, DateCreated, DateModified, Author, IsPublished, IsCommentEnabled, Raters, Rating, Slug, IsDeleted) VALUES ({1}blogid, {1}id, {1}title, {1}desc, {1}content, {1}created, {1}modified, {1}author, {1}published, {1}commentEnabled, {1}raters, {1}rating, {1}slug, {1}isdeleted)", this.tablePrefix, this.parmPrefix);
+                        var sqlQuery = string.Format("INSERT INTO {0}Posts (BlogID, PostID, Title, Description, PostContent, DateCreated, DateModified, Author, IsPublished, IsCommentEnabled, Raters, Rating, Slug, IsDeleted, IsFeatured, BusinessType) VALUES ({1}blogid, {1}id, {1}title, {1}desc, {1}content, {1}created, {1}modified, {1}author, {1}published, {1}commentEnabled, {1}raters, {1}rating, {1}slug, {1}isdeleted, {1}isfeatured, {1}businesstype)", this.tablePrefix, this.parmPrefix);
                         var blogId = post.BlogId == Guid.Empty ? Blog.CurrentInstance.Id : post.BlogId;
 
                         using (var cmd = conn.CreateTextCommand(sqlQuery))
@@ -974,6 +974,8 @@ namespace BlogEngine.Core.Providers
                             parms.Add(conn.CreateParameter(FormatParamName("rating"), post.Rating));
                             parms.Add(conn.CreateParameter(FormatParamName("slug"), (post.Slug ?? string.Empty)));
                             parms.Add(conn.CreateParameter(FormatParamName("isdeleted"), post.IsDeleted));
+                            parms.Add(conn.CreateParameter(FormatParamName("isfeatured"), post.IsFeatured)); 
+                            parms.Add(conn.CreateParameter(FormatParamName("businesstype"), post.BusinessType));
 
                             cmd.ExecuteNonQuery();
                         }
@@ -2382,7 +2384,7 @@ namespace BlogEngine.Core.Providers
                 {
                     if (conn.HasConnection)
                     {
-                        var sqlQuery = string.Format("UPDATE {0}Posts SET Title = {1}title, Description = {1}desc, PostContent = {1}content, DateCreated = {1}created, DateModified = {1}modified, Author = {1}Author, IsPublished = {1}published, IsCommentEnabled = {1}commentEnabled, Raters = {1}raters, Rating = {1}rating, Slug = {1}slug, IsDeleted = {1}isdeleted WHERE BlogID = {1}blogid AND PostID = {1}id", this.tablePrefix, this.parmPrefix);
+                        var sqlQuery = string.Format("UPDATE {0}Posts SET Title = {1}title, Description = {1}desc, PostContent = {1}content, DateCreated = {1}created, DateModified = {1}modified, Author = {1}Author, IsPublished = {1}published, IsCommentEnabled = {1}commentEnabled, Raters = {1}raters, Rating = {1}rating, Slug = {1}slug, IsDeleted = {1}isdeleted, IsFeatured = {1}isfeatured, BusinessType = {1}businesstype WHERE BlogID = {1}blogid AND PostID = {1}id", this.tablePrefix, this.parmPrefix);
 
                         using (var cmd = conn.CreateTextCommand(sqlQuery))
                         {
@@ -2403,6 +2405,9 @@ namespace BlogEngine.Core.Providers
                             p.Add(conn.CreateParameter(FormatParamName("rating"), post.Rating));
                             p.Add(conn.CreateParameter(FormatParamName("slug"), (post.Slug ?? string.Empty)));
                             p.Add(conn.CreateParameter(FormatParamName("isdeleted"), post.IsDeleted));
+
+                            p.Add(conn.CreateParameter(FormatParamName("isfeatured"), post.IsFeatured)); 
+                            p.Add(conn.CreateParameter(FormatParamName("businesstype"), post.BusinessType));
 
                             cmd.ExecuteNonQuery();
                         }

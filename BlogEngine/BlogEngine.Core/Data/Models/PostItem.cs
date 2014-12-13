@@ -52,5 +52,9 @@ namespace BlogEngine.Core.Data.Models
         /// Gets or sets post status
         /// </summary>
         public bool IsPublished { get; set; }
+
+        public bool IsFeatured { get; set; }
+
+        public Guid BusinessType { get; set; }
     }
 }

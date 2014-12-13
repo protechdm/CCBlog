@@ -395,7 +395,8 @@
                     string.Format(CultureInfo.InvariantCulture, "You cannot save a disposed {0}", this.GetType().Name));
             }
 
-            return this.IsChanged ? this.Update() : SaveAction.None;
+            //return this.IsChanged ? this.Update() : SaveAction.None;
+            return this.Update();
         }
 
         #endregion

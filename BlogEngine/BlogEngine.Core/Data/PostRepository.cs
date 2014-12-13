@@ -154,6 +154,8 @@ namespace BlogEngine.Core.Data
                 Tags = GetTags(post.Tags),
                 Comments = GetComments(post),
                 IsPublished = post.IsPublished,
+                IsFeatured = post.IsFeatured,
+                BusinessType = post.BusinessType
             };
         }
 
