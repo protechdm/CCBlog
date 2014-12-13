@@ -9,6 +9,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Hosting;
 using System.Web.Security;
+using System.Configuration;
 
 namespace BlogEngine.Core.Data
 {
@@ -146,8 +147,11 @@ namespace BlogEngine.Core.Data
         {
             var conn = new System.Data.SqlClient.SqlConnection();
             var command = new System.Data.SqlClient.SqlCommand();
+            string connectionString = ConfigurationManager.ConnectionStrings["BlogEngine"].ConnectionString;
+
             conn.ConnectionString =
                 "Data Source=94.126.43.196;Initial Catalog=BlogEngine;Integrated Security=False;Trusted_Connection=False;User Id=sa;Password=Her0sandwich=sql";
+            conn.ConnectionString = connectionString;
             command.Connection = conn;
             command.CommandType = CommandType.Text;
             command.CommandText = "select * from be_BusinessTypes";
