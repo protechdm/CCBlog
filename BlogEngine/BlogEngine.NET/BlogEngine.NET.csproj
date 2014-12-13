@@ -2166,12 +2166,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BlogEngine.Core\BlogEngine.Core.csproj">
-      <Project>{9ed9914a-fb6e-4d21-8c71-9122e8c3076b}</Project>
-      <Name>BlogEngine.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_GlobalResources\labels.af.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>labels.af.designer.cs</LastGenOutput>
@@ -2338,6 +2332,12 @@
     <Folder Include="App_Data\datastore\extensions\" />
     <Folder Include="App_Data\files\avatars\" />
     <Folder Include="App_Data\packages\SimpleBlog.1.1.0\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlogEngine.Core\BlogEngine.Core.csproj">
+      <Project>{9ed9914a-fb6e-4d21-8c71-9122e8c3076b}</Project>
+      <Name>BlogEngine.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
