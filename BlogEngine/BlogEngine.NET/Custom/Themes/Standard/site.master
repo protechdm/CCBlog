@@ -87,7 +87,9 @@
                         <h1><a href="<%=Utils.AbsoluteWebRoot %>"><%=BlogSettings.Instance.Name %></a></h1>
                         <h3><%=BlogSettings.Instance.Description %></h3>
                     </hgroup>--%>
+                    <a href="<%=Utils.AbsoluteWebRoot %>">
                     <img src="<%=Utils.AbsoluteWebRoot %>[CUSTOMFIELD|THEME|Standard|Logo Address|Custom/Themes/Standard/images/CloudBlog_CCW.png/]" class="pull-left logo" alt="<%=BlogSettings.Instance.Name %>" />
+                    </a>
 
                     <%--                    <div id="social-icons" class="pull-right social-icon">
                         <a href="http://facebook.com/[CUSTOMFIELD|THEME|Standard|Facebook account|BlogEngine.NET/]">
